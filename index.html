@@ -12,12 +12,12 @@
 </head>
 <body>
 <div data-ng-app="demoApp" data-ng-controller="mainController">
-    <form ng-submit="addUser()">
-        <input type="text" ng-model="newUser.firstName" placeholder="Give me a first name...">
-        <input type="text" ng-model="newUser.lastName" placeholder="Give me a last name...">
+    <form data-ng-submit="addUser()">
+        <input type="text" data-ng-model="newUser.firstName" placeholder="Give me a first name...">
+        <input type="text" data-ng-model="newUser.lastName" placeholder="Give me a last name...">
         <button type="submit">Add</button>
     </form>
-    <div ng-repeat="user in users | sortByFirstName">
+    <div data-ng-repeat="user in users | sortByFirstName">
         <say-hello message="Ohoy"></say-hello>
     </div>
 </div>
