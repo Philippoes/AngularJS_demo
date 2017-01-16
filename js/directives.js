@@ -1,5 +1,8 @@
 (function () {
-    angular.module("demoApp").directive("sayHello", function () {
+    'use strict';
+    angular
+        .module("demoApp")
+        .directive("sayHello", function () {
         return {
             scope: false,
             link: function ($scope, element, attrs) {
