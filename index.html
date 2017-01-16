@@ -7,15 +7,16 @@
 </head>
 <body>
 <div data-ng-app="demoApp" data-ng-controller="mainController">
+    <div ng-repeat="user in users">
     <say-hello message="Ohoy"></say-hello>
+    </div>
 </div>
 
 <script>
     var demoApp = angular.module("demoApp", []);
 
-    demoApp.controller("mainController", function ($scope) {
-        $scope.firstName = "Philip";
-        $scope.lastName = "Zudemberg";
+    demoApp.controller("mainController", function ($scope, userService) {
+        $scope.users = userService.users();
     });
 
     demoApp.directive("sayHello", function() {
@@ -24,8 +25,22 @@
             link: function($scope, element, attrs) {
                 $scope.message = attrs.message;
             },
-            template : "<h1>{{[message, firstName, lastName].join(' ')}}!</h1>"
+            template : "<h1>{{[message, user.firstName, user.lastName].join(' ')}}!</h1>"
         };
+    });
+
+    demoApp.service("userService", function(){
+       var collection = [
+           {firstName: "Philip", lastName: "Zudemberg"},
+           {firstName: "Thomas", lastName: "Ochman"},
+           {firstName: "Amber", lastName: "Wilkie"},
+           {firstName: "Raoul", lastName: "Diffouo"}
+       ];
+       return {
+           users: function(){
+               return collection;
+           }
+       }
     });
 </script>
 </body>
