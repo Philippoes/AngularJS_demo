@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>AngularJS intro</title>
     <meta charset="utf-8">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-  </head>
-  <body>
-    <div data-ng-app="demoApp" data-ng-controller="mainController">
-       <input type="text" data-ng-model="firstName" placeholder="Give me firstname">
-       <input type="text" ng-model="lastName" placeholder="Give me lastname">
-      <h1 ng-if="firstName">{{['Hello', firstName, lastName].join(' ')}}!</h1>
-    </div>
+</head>
+<body>
+<div data-ng-app="demoApp" data-ng-controller="mainController">
+    <h1>{{['Hello', firstName, lastName].join(' ')}}!</h1>
+</div>
 
-    <script>
-      var demoApp = angular.module("demoApp", []);
+<script>
+    var demoApp = angular.module("demoApp", []);
 
-      demoApp.controller("mainController", function($scope){
-        $scope.firstName = "";
-        $scope.lastName = "";
-      });
-    </script>
-  </body>
+    demoApp.controller("mainController", function ($scope) {
+        $scope.firstName = "Philip";
+        $scope.lastName = "Zudemberg";
+    });
+</script>
+</body>
 </html>
