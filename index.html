@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
 </head>
 <body>
 <div data-ng-app="demoApp" data-ng-controller="mainController">
@@ -19,14 +20,6 @@
 </div>
 
 <script>
-    demoApp.controller("mainController", function ($scope, userService) {
-        $scope.users = userService.users();
-        $scope.newUser = {};
-        $scope.addUser = function () {
-            userService.add($scope.newUser);
-            $scope.newUser = {}
-        }
-    });
 
     demoApp.directive("sayHello", function () {
         return {
