@@ -6,6 +6,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
 </head>
 <body>
 <div data-ng-app="demoApp" data-ng-controller="mainController">
@@ -20,16 +21,6 @@
 </div>
 
 <script>
-
-    demoApp.directive("sayHello", function () {
-        return {
-            scope: false,
-            link: function ($scope, element, attrs) {
-                $scope.message = attrs.message;
-            },
-            template: "<h1>{{[message, user.firstName, user.lastName].join(' ')}}!</h1>"
-        };
-    });
 
     demoApp.service("userService", function () {
         var collection = [
