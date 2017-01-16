@@ -8,7 +8,7 @@
 <body>
 <div data-ng-app="demoApp" data-ng-controller="mainController">
     <div ng-repeat="user in users">
-    <say-hello message="Ohoy"></say-hello>
+        <say-hello message="Ohoy"></say-hello>
     </div>
 </div>
 
@@ -19,28 +19,28 @@
         $scope.users = userService.users();
     });
 
-    demoApp.directive("sayHello", function() {
+    demoApp.directive("sayHello", function () {
         return {
             scope: false,
-            link: function($scope, element, attrs) {
+            link: function ($scope, element, attrs) {
                 $scope.message = attrs.message;
             },
-            template : "<h1>{{[message, user.firstName, user.lastName].join(' ')}}!</h1>"
+            template: "<h1>{{[message, user.firstName, user.lastName].join(' ')}}!</h1>"
         };
     });
 
-    demoApp.service("userService", function(){
-       var collection = [
-           {firstName: "Philip", lastName: "Zudemberg"},
-           {firstName: "Thomas", lastName: "Ochman"},
-           {firstName: "Amber", lastName: "Wilkie"},
-           {firstName: "Raoul", lastName: "Diffouo"}
-       ];
-       return {
-           users: function(){
-               return collection;
-           }
-       }
+    demoApp.service("userService", function () {
+        var collection = [
+            {firstName: "Philip", lastName: "Zudemberg"},
+            {firstName: "Thomas", lastName: "Ochman"},
+            {firstName: "Amber", lastName: "Wilkie"},
+            {firstName: "Raoul", lastName: "Diffouo"}
+        ];
+        return {
+            users: function () {
+                return collection;
+            }
+        }
     });
 </script>
 </body>
