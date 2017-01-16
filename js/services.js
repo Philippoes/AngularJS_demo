@@ -2,7 +2,9 @@
     'use strict';
     angular
         .module("demoApp")
-        .service("userService", function () {
+        .service("userService", userService);
+
+    function userService() {
         var collection = [
             {firstName: "Philip", lastName: "Zudemberg"},
             {firstName: "Thomas", lastName: "Ochman"},
@@ -17,5 +19,5 @@
                 collection.push(object)
             }
         }
-    });
+    }
 })();
